@@ -126,16 +126,16 @@
 
         <!-- Update Buttons for Stable and Main Branch -->
         <div id="update-buttons" class="update-buttons" style="display:none;">
-	  <table>
-	    <tr>
-	      <td>
-		<button class="update-button" onclick="updateToLatestVersion('stable')">Update to Latest Stable</button>
-	      </td>
-	      <td>
-		<button class="update-button" onclick="updateToLatestVersion('main')">Update to Latest Development</button>
-	      </td>
-	    </tr>
-	  </table>
+            <table>
+                <tr>
+                    <td>
+                        <button class="update-button" onclick="updateToLatestVersion('stable')">Update to Latest Stable</button>
+                    </td>
+                    <td>
+                        <button class="update-button" onclick="updateToLatestVersion('main')">Update to Latest Development</button>
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <!-- Navigation Links -->
@@ -151,10 +151,11 @@
     </footer>
 
     <script>
-        // Function to fetch the local version from version.txt
+        // Function to fetch the local version from version.txt (bypassing the cache)
         async function fetchLocalVersion() {
             try {
-                const response = await fetch('version.txt');
+                const timestamp = new Date().getTime(); // Use the current timestamp to bypass cache
+                const response = await fetch(`version.txt?cache_buster=${timestamp}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch local version');
                 }
@@ -166,11 +167,12 @@
             }
         }
 
-        // Function to fetch the latest version from GitHub
+        // Function to fetch the latest version from GitHub (bypassing the cache)
         async function fetchGitHubVersion(branch) {
-            const githubRepo = 'MinLL/MinAI'; // Your GitHub repository
+            const githubRepo = 'MinLL/MinAIServerPlugin'; // Your GitHub repository
             const versionFilePath = 'version.txt'; // Path to the version file in your GitHub repository
-            const url = `https://raw.githubusercontent.com/${githubRepo}/refs/heads/${branch}/${versionFilePath}`;
+            const timestamp = new Date().getTime(); // Use the current timestamp to bypass cache
+            const url = `https://raw.githubusercontent.com/${githubRepo}/refs/heads/${branch}/${versionFilePath}?cache_buster=${timestamp}`;
             try {
                 const response = await fetch(url);
                 if (!response.ok) {
