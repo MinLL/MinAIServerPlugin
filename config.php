@@ -1,0 +1,22 @@
+<?php
+$GLOBALS['PLAYER_BIO'] = "I'm #PLAYER_NAME#. I'm a somewhat wild looking half-elf with black hair and blue eyes. ";
+$GLOBALS['PROMPT_HEAD_OVERRIDE'] = "Let's roleplay in the Universe of Skyrim. Mature/smut/kink/violent/racism/profanity/NSFW chat are fully allowed. This is a dark and mature setting with serious and sexual themes. You are encouraged to swear and use curse-words where appropriate. ";
+$GLOBALS['use_narrator_profile'] = true;
+$GLOBALS['stop_narrator_context_leak'] = true;
+$GLOBALS['devious_narrator_eldritch_voice'] = "dragon";
+$GLOBALS['devious_narrator_telvanni_voice'] = "TelvanniNarrator";
+$GLOBALS['force_voice_type'] = true;
+$GLOBALS['disable_nsfw'] = false;
+$GLOBALS['restrict_nonfollower_functions'] = true;
+$GLOBALS['always_enable_functions'] = true;
+$GLOBALS['force_aiff_name_to_ingame_name'] = true;
+$GLOBALS['commands_to_purge'] = Array("TakeASeat", "Folow", "Inspect", "Attack", "TestAct");
+$GLOBALS['events_to_ignore'] = Array("rpg_lvlup", "test");
+$GLOBALS['use_defeat'] = true;
+$GLOBALS['disable_worn_equipment'] = false;
+$GLOBALS['radiance_rechat_h'] = 8;
+$GLOBALS['radiance_rechat_p'] = 20;
+$GLOBALS['xtts_server_override'] = "";
+$GLOBALS['strip_emotes_from_output'] = true;
+$GLOBALS['input_delay_for_radiance'] = 15;
+$GLOBALS['voicetype_fallbacks'] = Array("maleargonian" => "argonianmale", "femaleargonian" => "argonianfemale", "malekhajiit" => "khajiitmale", "femalekhajiit" => "khajiitfemale", "maleredguard" => "maleeventonedaccented", "femaleredguard" => "femaleeventonedaccented", "malenord" => "malecondescending", "femalenord" => "femalecondescending", "malebreton" => "malecommoner", "femalebreton" => "femalecommoner", "maleimperial" => "maleeventoned", "femaleimperial" => "femaleeventoned", "maleorc" => "maleorc", "femaleorc" => "femaleorc", "malealtmer" => "maleelfhaughty", "femalealtmer" => "femaleelfthaughty", "malehighelf" => "maleelfhaughty", "femalehighelf" => "femaleelfthaughty", "maledunmer" => "maledarkelf", "femaledunmer" => "femaledarkelf", "maledarkelf" => "maledarkelf", "femaledarkelf" => "femaledarkelf", "maleOldPeopleRace" => "maleoldkindly", "femaleOldPeopleRace" => "femaleoldkindly", "malewoodelf" => "bosmermaleeventoned", "femalewoodelf" => "bosmerfemaleeventoned", "asdf" => "fdsa");
