@@ -169,7 +169,7 @@
 
         // Function to fetch the latest version from GitHub (bypassing the cache)
         async function fetchGitHubVersion(branch) {
-            const githubRepo = 'MinLL/MinAIServerPlugin'; // Your GitHub repository
+            const githubRepo = 'MinLL/MinAI'; // Your GitHub repository
             const versionFilePath = 'version.txt'; // Path to the version file in your GitHub repository
             const timestamp = new Date().getTime(); // Use the current timestamp to bypass cache
             const url = `https://raw.githubusercontent.com/${githubRepo}/refs/heads/${branch}/${versionFilePath}?cache_buster=${timestamp}`;
@@ -220,7 +220,7 @@
             const versionInfoDiv = document.getElementById('version-info');
             const updateButtonsDiv = document.getElementById('update-buttons');
 
-            if (localVersion && stableVersion && mainVersion) {
+            if (localVersion && stableVersion) {
                 let message = `Local version: ${localVersion} | Latest stable: ${stableVersion} | Latest development: ${mainVersion}`;
 
                 if (localVersion === stableVersion && localVersion === mainVersion) {
@@ -230,7 +230,7 @@
                         <p class="update-warning">New versions are available!</p>
                         <p>${message}</p>
                     `;
-                    updateButtonsDiv.style.display = 'block';
+                    // updateButtonsDiv.style.display = 'block';
                 }
             } else {
                 versionInfoDiv.textContent = 'Unable to check for updates at this time.';
